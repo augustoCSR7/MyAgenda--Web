@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MyAgenda</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <div>
+            <img src="/static/img/logo.png" alt="logo">
+        </div>
+        <h1>Faça seu login</h1>
+        <br>
+        <input type="text" name="username" placeholder="Nome de usuário" id="username">
+        <br>
+        <input type="password" name="senha" placeholder="Senha" id="password">
+        <br>
+        <a href="cadastro.html">Criar conta</a>
+        <button onclick="window.location.href = '/app'" id="botao_entrar">Entrar</button>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro-MyAgenda</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <div>
+            <img src="/static/img/logo.png" alt="logo">
+        </div>
+        <h1>Faça seu Cadastro</h1>
+        <br>
+        <input type="text" name="nome" placeholder="Nome Completo" >
+        <br>
+        <input type="text" name="user" placeholder="Nome de usuário" >
+        <br>
+        <input type="email" name="email" placeholder="Email">
+        <br>
+        <input type="password" name="senha1" placeholder="Senha">
+        <br>
+        <input type="password" name="senha2" placeholder="Confirme a senha">
+        <br>
+        <button onclick="window.location.href = '/'" id="botao_cadastrar">Cadastrar</button>
+    </body>
+</html>

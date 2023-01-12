@@ -1,0 +1,69 @@
+body {
+    background-image: url("/static/img/img4.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-color: DimGray;
+    background-size: cover;
+}
+table, th, td {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+h1 {
+    color: white;
+}
+p, h2 {
+    color: white;
+    font-family: Shanti;
+    font-size: 1.2em;
+    display: inline-block;
+    margin:  20px;
+}
+a {
+    color: rgb(255, 0, 0);
+    font-family: Shanti;
+    font-size: 1.2em;
+    display: inline-block;
+    margin:  20px;
+}
+img {
+    margin: 60px 0 30px 0;
+    width: 548px;
+    height: 262px;
+}
+input, button {
+  width: 270px;
+  margin: 20px 20px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-family: Shanti;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border: solid 5px #0d43d8;
+}
+
+#lembrete {
+    background-color: rgb(0, 0, 0);
+    border:  none;
+    width:  200px;
+    color: white;
+}
+
+#lembrete:hover, #botao_entrar:hover, #botao_cadastrar:hover  {
+    background-color: rgb(3, 62, 255);
+}
+
+#botao_entrar, #botao_cadastrar {
+    width: 150px;
+}
+
