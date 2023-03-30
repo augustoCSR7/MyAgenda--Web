@@ -1,16 +1,29 @@
-from flask import Flask, render_template, request, flash
-import sqlite3
+from flask import Flask, render_template, request, flash, redirect
+import json
 
 app = Flask(__name__)
 app.secret_key = "dkjhdhfbshjfb64f38fj dhfbgdgu8"
 
-@app.route("/")
+@app.route('/')
 def home():
-	return render_template("login.html")
+	return render_template('login.html')
 
-@app.route("/login.html")
+@app.route("/login", methods=["GET", "POST"])
 def login():
-	return render_template("login.html")
+	nome = request.form.get('username')
+	senha = request.form.get('senha')
+
+	with open('usuarios.json') as usuariosTemp:
+		usuarios = json.load(usuariosTemp)
+		cont = 0
+		for usuario in usuarios:
+			cont += 1
+			if usuario['nome'] == nome and usuario['senha'] == senha:
+				return render_template ("index.html")
+			
+			if cont >= len(usuarios):
+				return redirect ('/')
+
 
 @app.route("/cadastro.html")
 def cadastro():
@@ -23,5 +36,8 @@ def index():
 
 @app.route("/lembrete", methods=['POST', 'GET'])
 def greeter():
-	flash("Lembrete na data: " + str(request.form['time_input']) + ", " + str(request.form['date_input']) + " criado com sucesso!")
+	flash("Lembrete: " + str(request.form['title_input']) + " às " + str(request.form['time_input']) + ", " + str(request.form['date_input']) + " criado com sucesso!")
 	return render_template("index.html")
+
+if __name__ in "__main__":
+	app.run(debug=True)

@@ -76,6 +76,8 @@
     <br>      
     <form action="lembrete" method="post">
         <h1>Novo lembrete</h1>
+        <input type="text" name="title_input" placeholder="Digite o título">
+        <br>
         <input type="date" name="date_input">
         <br>
         <input type="time" name="time_input">
@@ -86,7 +88,7 @@
         <p>{{ message }}</p>
         {% endfor %}
         <br>
-        <a href="login.html" id="">DESCONECTAR</a>
+        <a href="/login" id="">DESCONECTAR</a>
     
     </form>
 </body>
