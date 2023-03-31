@@ -1,5 +1,19 @@
 from flask import Flask, render_template, request, flash, redirect
 import json
+import sqlite3
+
+banco = sqlite3.connect('primeiro_banco.db')
+
+cursor = banco.cursor()
+
+#cursor.execute("CREATE TABLE user (nome text, username text not null unique, password text)")
+
+cursor.execute("INSERT INTO user VALUES('Augusto César', 'augustocadasr', 'dada323')")
+
+banco.commit()
+
+cursor.execute("SELECT * FROM user")
+print(cursor.fetchall())
 
 app = Flask(__name__)
 app.secret_key = "dkjhdhfbshjfb64f38fj dhfbgdgu8"
